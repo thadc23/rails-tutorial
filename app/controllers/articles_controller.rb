@@ -5,6 +5,7 @@ class ArticlesController < ApplicationController
   def index
     @articles = Article.where(nil) # creates an anonymous scope
     @articles = @articles.title(params[:title]) if params[:title].present?
+    @articles = @articles.starts_with(params[:starts_with]) if params[:starts_with].present?
   end
 
   def create
