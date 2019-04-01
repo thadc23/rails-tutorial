@@ -2,7 +2,7 @@
 A simple Rails app for a blog following this [tutorial](https://guides.rubyonrails.org/getting_started.html).
 
 ## Filtering
-There are 2 types of filtering implemented on the Article model. The first is for exact matches on the title attribute. The second one will return all articles whose title starts with the provided prefix.
+There are 2 types of filtering implemented on the Article model following guidance from this [blog](https://www.justinweiss.com/articles/search-and-filter-rails-models-without-bloating-your-controller/). The first is for exact matches on the title attribute. The second one will return all articles whose title starts with the provided prefix.
 ```
 class Article < ApplicationRecord
   scope :title, -> (title) { where title: title }
